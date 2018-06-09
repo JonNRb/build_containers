@@ -1,4 +1,4 @@
-# build_containers
+# build_containers [![Build Status](https://drone.jonnrb.com/api/badges/jon/build_containers/status.svg?branch=master)](https://drone.jonnrb.com/jon/build_containers)
 
 ## _Containers I use to build stuff_
 
