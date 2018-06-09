@@ -6,3 +6,10 @@ pipeline:
     dockerfile: ./bazel_cc/Dockerfile
     secrets: [ docker_username, docker_password ]
 
+  trigger_bazel_cc_deps:
+    image: plugins/downstream
+    server: https://drone.jonnrb.com
+    fork: true
+    repositories:
+      - jon/hostapd_grpc
+    secrets: [ downstream_token ]
