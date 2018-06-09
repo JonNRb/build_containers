@@ -1,10 +1,10 @@
-from ubuntu:xenial
+from ubuntu:rolling
 
 # install deps
+#&& apt-add-repository -y 'ppa:openjdk-r/ppa' \
 run apt-get update \
  && apt-get install -y software-properties-common \
  && apt-add-repository -y 'ppa:ubuntu-toolchain-r/test' \
- && apt-add-repository -y 'ppa:openjdk-r/ppa' \
  && apt-get update \
  && apt-get install -y vim gdb gcc gcc-7 g++ g++-7 git wget openjdk-8-jdk \
       zlib1g-dev bash-completion \
