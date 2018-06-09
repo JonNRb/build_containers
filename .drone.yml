@@ -1,0 +1,8 @@
+pipeline:
+  docker_bazel_cc:
+    image: plugins/docker
+    repo: jonnrb/bazel_cc
+    context: ./bazel_cc
+    dockerfile: ./bazel_cc/Dockerfile
+    secrets: [ docker_username, docker_password ]
+
