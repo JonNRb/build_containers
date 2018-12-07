@@ -1,16 +1,14 @@
-pipeline:
-  docker_bazel_cc:
-    image: plugins/docker
+kind: pipline
+name: default
+
+steps:
+- name: docker_bazel_cc
+  image: plugins/docker
+  settings:
     repo: jonnrb/bazel_cc
     context: ./bazel_cc
     dockerfile: ./bazel_cc/Dockerfile
-    storage_driver: overlay2
-    secrets: [ docker_username, docker_password ]
-
-  trigger_bazel_cc_deps:
-    image: plugins/downstream
-    server: https://drone.jonnrb.com
-    fork: true
-    repositories:
-      - jon/hostapd_grpc
-    secrets: [ downstream_token ]
+    username:
+      from_secret: docker_username
+    password:
+      from_secret: docker_password
