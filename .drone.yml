@@ -13,9 +13,10 @@ steps:
     context: ./bazel_cc
     dockerfile: ./bazel_cc/Dockerfile
     password:
-      from_secret: docker_password
-    repo: jonnrb/bazel_cc
+      from_secret: quay_password
+    registry: quay.io
+    repo: quay.io/jonnrb/bazel_cc
     username:
-      from_secret: docker_username
+      from_secret: quay_username
 
 ...
