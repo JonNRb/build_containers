@@ -22,5 +22,4 @@ copy --from=bootstrap /root/go /usr/local/go
 run mkdir -p /go/bin
 env GOPATH /go
 env PATH "/usr/local/go/bin:$PATH:$GOPATH/bin"
-# for cgo
-run apk add --no-cache gcc
+run apk add --no-cache ca-certificates gcc git
