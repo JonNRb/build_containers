@@ -1,6 +1,6 @@
 ---
 kind: pipline
-name: default
+name: bazel_cc
 
 platform:
   os: linux
@@ -16,6 +16,27 @@ steps:
       from_secret: quay_password
     registry: quay.io
     repo: quay.io/jonnrb/bazel_cc
+    username:
+      from_secret: quay_username
+
+---
+kind: pipline
+name: go
+
+platform:
+  os: linux
+  arch: amd64
+
+steps:
+- name: docker_go
+  image: plugins/docker
+  settings:
+    context: ./go
+    dockerfile: ./go/Dockerfile
+    password:
+      from_secret: quay_password
+    registry: quay.io
+    repo: quay.io/jonnrb/go
     username:
       from_secret: quay_username
 
