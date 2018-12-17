@@ -6,10 +6,9 @@ env GOOS linux
 env GOARCH amd64
 env GOROOT /root/go
 
-run apk update \
- && apk add bash gcc go musl-dev \
+run apk add --no-cache bash gcc go musl-dev \
  && echo "$SRC_HASH  go.src.tgz" |sha256sum -c - \
- && tar -C /root -xvf go.src.tgz \
+ && tar -C /root -xf go.src.tgz \
  && cd /root/go/src \
  && ./bootstrap.bash \
  && /root/go-linux-amd64-bootstrap/bin/go version \
