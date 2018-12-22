@@ -23,3 +23,5 @@ run mkdir -p /go/bin
 env GOPATH /go
 env PATH "/usr/local/go/bin:$PATH:$GOPATH/bin"
 run apk add --no-cache ca-certificates gcc git musl-dev
+# assume go modules
+workdir /src
