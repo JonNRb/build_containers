@@ -1,4 +1,4 @@
-from alpine:3.6 as bootstrap
+from alpine:3.8 as bootstrap
 
 add https://golang.org/dl/go1.11.4.src.tar.gz /go.src.tgz
 env SRC_HASH 4cfd42720a6b1e79a8024895fa6607b69972e8e32446df76d6ce79801bbadb15
@@ -16,7 +16,7 @@ run apk add --no-cache bash gcc go musl-dev \
  && /root/go/bin/go version
 
 
-from alpine:3.6
+from alpine:3.8
 
 copy --from=bootstrap /root/go /usr/local/go
 run mkdir -p /go/bin
