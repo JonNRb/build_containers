@@ -1,7 +1,7 @@
 from alpine:3.10 as bootstrap
 
-add https://golang.org/dl/go1.13.1.src.tar.gz /go.src.tgz
-env SRC_HASH 81f154e69544b9fa92b1475ff5f11e64270260d46e7e36c34aafc8bc96209358
+add https://golang.org/dl/go1.13.5.src.tar.gz /go.src.tgz
+env SRC_HASH 27d356e2a0b30d9983b60a788cf225da5f914066b37a6b4f69d457ba55a626ff
 env GOOS linux
 env GOARCH amd64
 env GOROOT /root/go
